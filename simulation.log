@@ -1,0 +1,738 @@
+xrun(64): 25.03-s003: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	25.03-s003: Started on Nov 09, 2025 at 06:14:36 EST
+xrun
+	-uvmhome /tools/software/cadence/xcelium/latest/tools/methodology/UVM/CDNS-1.1d
+	-64bit
+	-sv
+	-linedebug
+	-access +rwc
+	-timescale 1ns/10ps
+	-coverage all
+	-licqueue
+	-covoverwrite
+	+UVM_MAX_QUIT_COUNT=1
+	+UVM_TESTNAME=all_gcd_test
+	+UVM_VERBOSITY=UVM_FULL
+	+define++SIM=1
+	-incdir src/uvm/tests
+	-incdir src/uvm/agent
+	-incdir src/uvm/sequences
+	-incdir src/uvm/env
+	-incdir src/uvm/tb
+	src/sv/rtl/gcd_pkg.sv
+	src/sv/rtl/gcd.sv
+	src/uvm/sequences/gcd_seq_pkg.sv
+	src/uvm/agent/gcd_agent_pkg.sv
+	src/uvm/env/gcd_env_pkg.sv
+	src/uvm/tests/gcd_test_pkg.sv
+	src/uvm/tb/gcd_if.sv
+	src/uvm/tb/gcd_tb_top.sv
+	-top gcd_tb_top
+	-logfile simulation.log
+
+   User defined plus("+") options:
+	+UVM_MAX_QUIT_COUNT=1
+	+UVM_VERBOSITY=UVM_FULL
+
+xrun: *W,BADPRF: The -linedebug option may have an adverse performance impact.
+Compiling UVM packages (uvm_pkg.sv cdns_uvm_pkg.sv) using uvmhome location /tools/software/cadence/xcelium/latest/tools/methodology/UVM/CDNS-1.1d
+file: src/sv/rtl/gcd_pkg.sv
+	package worklib.gcd_pkg:sv
+		errors: 0, warnings: 0
+file: src/sv/rtl/gcd.sv
+	module worklib.gcd:sv
+		errors: 0, warnings: 0
+file: src/uvm/sequences/gcd_seq_pkg.sv
+	package worklib.gcd_seq_pkg:sv
+		errors: 0, warnings: 0
+file: src/uvm/agent/gcd_agent_pkg.sv
+	package worklib.gcd_agent_pkg:sv
+		errors: 0, warnings: 0
+file: src/uvm/env/gcd_env_pkg.sv
+	package worklib.gcd_env_pkg:sv
+		errors: 0, warnings: 0
+file: src/uvm/tests/gcd_test_pkg.sv
+	package worklib.gcd_test_pkg:sv
+		errors: 0, warnings: 0
+file: src/uvm/tb/gcd_if.sv
+	interface worklib.gcd_if:sv
+		errors: 0, warnings: 0
+file: src/uvm/tb/gcd_tb_top.sv
+	module worklib.gcd_tb_top:sv
+		errors: 0, warnings: 0
+xmvlog: *W,SPDUSD: Include directory src/uvm/tb given but not used.
+	Total errors/warnings found outside modules and primitives:
+		errors: 0, warnings: 1
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		uvm_pkg
+		cdns_uvmapi
+		cdns_assert2uvm_pkg
+		cdns_uvm_pkg
+		gcd_seq_pkg
+		gcd_agent_pkg
+		gcd_env_pkg
+		gcd_test_pkg
+		gcd_pkg
+		gcd_tb_top
+
+	Extracting FSMs for coverage:
+		worklib.gcd
+			FSM extracted for state register state_r
+		worklib.gcd_tb_top
+	Total FSMs extracted = 1
+	Building instance overlay tables: ....................
+xmelab: *W,COVFDP: FSM description matching across instance of a module for "COVFDM" warning has been moved from elaboration to simulation dumping. To restore old matching behavior, use "set_backward_compat -COVFDM_during_elab". Also, it is recommended to use set_parameterized_module_coverage CCF command to avoid coverage loss due to FSM description difference across instances of a module.
+xmelab: *W,COVFHT: FSM hold transitions (transitions to the current state) are not extracted for any FSM in default mode.
+ Done
+	Enabling instrumentation for coverage types: block expression FSM toggle functional
+xmelab: *W,COVDCL: By default expression coverage is scored only for Verilog logical operators (|| and &&) and VHDL logical operators (OR, AND, NOR, and NAND), and is scored only in condition expressions. To score coverage for other operators and for expressions in other statements, use the "set_expr_coverable_operators" and "set_expr_coverable_statements" coverage configuration file commands with suitable options at elaboration.
+	Generating native compiled code:
+		worklib.gcd:sv <0x421440a6>
+			streams:  22, words: 13817
+		worklib.gcd_tb_top:sv <0x2289e93a>
+			streams: 554, words: 777038
+		worklib.gcd_seq_pkg:sv <0x066d67d0>
+			streams: 418, words: 719896
+		worklib.cdns_uvm_pkg:sv <0x62b17930>
+			streams: 183, words: 393706
+		worklib.cdns_uvmapi:svp <0x33ba6a1f>
+			streams:  27, words: 46418
+		worklib.cdns_assert2uvm_pkg:sv <0x0975d618>
+			streams:   3, words:  3144
+		worklib.uvm_pkg:sv <0x06fef585>
+			streams: 5407, words: 12202663
+xmelab: *W,COVNOEN: By default, toggle coverage is not supported for systemverilog enumerated nets and variables. To enable toggle coverage of these objects, specify the 'set_toggle_scoring -sv_enum' command in the coverage configuration file.
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                        Instances  Unique
+		Modules:                        2       2
+		Interfaces:                     1       1
+		Verilog packages:               9       9
+		Registers:                 14,551  10,422
+		Scalar wires:                   7       -
+		Vectored wires:                 4       -
+		Named events:                   4      12
+		Always blocks:                  4       4
+		Initial blocks:               327     171
+		Parallel blocks:               26      27
+		Pseudo assignments:             9       -
+		Assertions:                     2       2
+		SV Class declarations:        212     326
+		SV Class specializations:     409     409
+		Simulation timescale:       100ps
+	Writing initial simulation snapshot: worklib.gcd_tb_top:sv
+Loading snapshot worklib.gcd_tb_top:sv .................... Done
+SVSEED default: 1
+xcelium> source /tools/software/cadence/xcelium/latest/tools/xcelium/files/xmsimrc
+xcelium> source /tools/software/cadence/xcelium/latest/tools/methodology/UVM/CDNS-1.1d/additions/sv/files/tcl/uvm_sim.tcl
+xcelium> run
+----------------------------------------------------------------
+CDNS-UVM-1.1d (25.03-s003)
+(C) 2007-2013 Mentor Graphics Corporation
+(C) 2007-2013 Cadence Design Systems, Inc.
+(C) 2006-2013 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO @ 0: reporter [RNTST] Running test all_gcd_test...
+UVM_INFO @ 0: reporter [MAXQUITSET] '+UVM_MAX_QUIT_COUNT=1' provided on the command line is being applied.
+UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
+------------------------------------------------------------------
+Name                        Type                    Size  Value   
+------------------------------------------------------------------
+uvm_test_top                all_gcd_test            -     @2477   
+  env                       gcd_env                 -     @2562   
+    agent                   gcd_agent               -     @2594   
+      driver                gcd_driver              -     @2706   
+        rsp_port            uvm_analysis_port       -     @2808   
+          recording_detail  uvm_verbosity           32    UVM_FULL
+        seq_item_port       uvm_seq_item_pull_port  -     @2757   
+          recording_detail  uvm_verbosity           32    UVM_FULL
+        recording_detail    uvm_verbosity           32    UVM_FULL
+      monitor               gcd_monitor             -     @3474   
+        item_collect_port   uvm_analysis_port       -     @3523   
+          recording_detail  uvm_verbosity           32    UVM_FULL
+        recording_detail    uvm_verbosity           32    UVM_FULL
+      sequencer             gcd_sequencer           -     @2838   
+        rsp_export          uvm_analysis_export     -     @2896   
+          recording_detail  uvm_verbosity           32    UVM_FULL
+        seq_item_export     uvm_seq_item_pull_imp   -     @3444   
+          recording_detail  uvm_verbosity           32    UVM_FULL
+        recording_detail    uvm_verbosity           32    UVM_FULL
+        arbitration_queue   array                   0     -       
+        lock_queue          array                   0     -       
+        num_last_reqs       integral                32    'd1     
+        num_last_rsps       integral                32    'd1     
+      recording_detail      uvm_verbosity           32    UVM_FULL
+    sb                      gcd_sb                  -     @2592   
+      item_collect_export   uvm_analysis_imp        -     @2674   
+        recording_detail    uvm_verbosity           32    UVM_FULL
+      recording_detail      uvm_verbosity           32    UVM_FULL
+    recording_detail        uvm_verbosity           32    UVM_FULL
+------------------------------------------------------------------
+
+UVM_INFO src/uvm/tests/gcd_base_test.svh(49) @ 0: uvm_test_top [all_gcd_test] Start of simulation for uvm_test_top
+UVM_INFO /tools/software/cadence/xcelium/latest/tools/methodology/UVM/CDNS-1.1d/sv/src/seq/uvm_sequencer_base.svh(1391) @ 0: uvm_test_top.env.agent.sequencer [PHASESEQ] Starting default sequence 'comprehensive_gcd_seq' for phase 'run'
+SDI/Verilog Transaction Recording Facility Version 25.03-s003
+UVM_INFO src/uvm/sequences/gcd_seq_lib.sv(171) @ 0: uvm_test_top.env.agent.sequencer@@comprehensive_gcd_seq [comprehensive_gcd_seq] Running comprehensive test
+UVM_INFO /tools/software/cadence/xcelium/latest/tools/methodology/UVM/CDNS-1.1d/sv/src/seq/uvm_sequencer_base.svh(1385) @ 0: uvm_test_top.env.agent.sequencer [PHASESEQ] No default phase sequence for phase 'pre_reset'
+UVM_INFO /tools/software/cadence/xcelium/latest/tools/methodology/UVM/CDNS-1.1d/sv/src/seq/uvm_sequencer_base.svh(1385) @ 0: uvm_test_top.env.agent.sequencer [PHASESEQ] No default phase sequence for phase 'reset'
+UVM_INFO /tools/software/cadence/xcelium/latest/tools/methodology/UVM/CDNS-1.1d/sv/src/seq/uvm_sequencer_base.svh(1385) @ 0: uvm_test_top.env.agent.sequencer [PHASESEQ] No default phase sequence for phase 'post_reset'
+UVM_INFO /tools/software/cadence/xcelium/latest/tools/methodology/UVM/CDNS-1.1d/sv/src/seq/uvm_sequencer_base.svh(1385) @ 0: uvm_test_top.env.agent.sequencer [PHASESEQ] No default phase sequence for phase 'pre_configure'
+UVM_INFO /tools/software/cadence/xcelium/latest/tools/methodology/UVM/CDNS-1.1d/sv/src/seq/uvm_sequencer_base.svh(1385) @ 0: uvm_test_top.env.agent.sequencer [PHASESEQ] No default phase sequence for phase 'configure'
+UVM_INFO /tools/software/cadence/xcelium/latest/tools/methodology/UVM/CDNS-1.1d/sv/src/seq/uvm_sequencer_base.svh(1385) @ 0: uvm_test_top.env.agent.sequencer [PHASESEQ] No default phase sequence for phase 'post_configure'
+UVM_INFO /tools/software/cadence/xcelium/latest/tools/methodology/UVM/CDNS-1.1d/sv/src/seq/uvm_sequencer_base.svh(1385) @ 0: uvm_test_top.env.agent.sequencer [PHASESEQ] No default phase sequence for phase 'pre_main'
+UVM_INFO /tools/software/cadence/xcelium/latest/tools/methodology/UVM/CDNS-1.1d/sv/src/seq/uvm_sequencer_base.svh(1385) @ 0: uvm_test_top.env.agent.sequencer [PHASESEQ] No default phase sequence for phase 'main'
+UVM_INFO /tools/software/cadence/xcelium/latest/tools/methodology/UVM/CDNS-1.1d/sv/src/seq/uvm_sequencer_base.svh(1385) @ 0: uvm_test_top.env.agent.sequencer [PHASESEQ] No default phase sequence for phase 'post_main'
+UVM_INFO /tools/software/cadence/xcelium/latest/tools/methodology/UVM/CDNS-1.1d/sv/src/seq/uvm_sequencer_base.svh(1385) @ 0: uvm_test_top.env.agent.sequencer [PHASESEQ] No default phase sequence for phase 'pre_shutdown'
+UVM_INFO /tools/software/cadence/xcelium/latest/tools/methodology/UVM/CDNS-1.1d/sv/src/seq/uvm_sequencer_base.svh(1385) @ 0: uvm_test_top.env.agent.sequencer [PHASESEQ] No default phase sequence for phase 'shutdown'
+UVM_INFO /tools/software/cadence/xcelium/latest/tools/methodology/UVM/CDNS-1.1d/sv/src/seq/uvm_sequencer_base.svh(1385) @ 0: uvm_test_top.env.agent.sequencer [PHASESEQ] No default phase sequence for phase 'post_shutdown'
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 4500: uvm_test_top.env.sb [gcd_sb] Matched: a=196, b=59, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 12100: uvm_test_top.env.sb [gcd_sb] Matched: a=167, b=28, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 16900: uvm_test_top.env.sb [gcd_sb] Matched: a=62, b=182, gcd=2
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 21500: uvm_test_top.env.sb [gcd_sb] Matched: a=139, b=101, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 26300: uvm_test_top.env.sb [gcd_sb] Matched: a=141, b=206, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 29100: uvm_test_top.env.sb [gcd_sb] Matched: a=68, b=30, gcd=2
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 32900: uvm_test_top.env.sb [gcd_sb] Matched: a=177, b=84, gcd=3
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 36700: uvm_test_top.env.sb [gcd_sb] Matched: a=211, b=114, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 41100: uvm_test_top.env.sb [gcd_sb] Matched: a=169, b=74, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 42300: uvm_test_top.env.sb [gcd_sb] Matched: a=54, b=54, gcd=54
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 46300: uvm_test_top.env.sb [gcd_sb] Matched: a=119, b=219, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 49900: uvm_test_top.env.sb [gcd_sb] Matched: a=109, b=59, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 52300: uvm_test_top.env.sb [gcd_sb] Matched: a=25, b=175, gcd=25
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 57100: uvm_test_top.env.sb [gcd_sb] Matched: a=122, b=9, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 59900: uvm_test_top.env.sb [gcd_sb] Matched: a=144, b=30, gcd=6
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 61900: uvm_test_top.env.sb [gcd_sb] Matched: a=91, b=26, gcd=13
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 65700: uvm_test_top.env.sb [gcd_sb] Matched: a=220, b=41, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 70500: uvm_test_top.env.sb [gcd_sb] Matched: a=17, b=198, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 73900: uvm_test_top.env.sb [gcd_sb] Matched: a=252, b=119, gcd=7
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 77300: uvm_test_top.env.sb [gcd_sb] Matched: a=156, b=225, gcd=3
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 81100: uvm_test_top.env.sb [gcd_sb] Matched: a=241, b=51, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 83900: uvm_test_top.env.sb [gcd_sb] Matched: a=252, b=153, gcd=9
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 88100: uvm_test_top.env.sb [gcd_sb] Matched: a=187, b=139, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 94500: uvm_test_top.env.sb [gcd_sb] Matched: a=48, b=146, gcd=2
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 98100: uvm_test_top.env.sb [gcd_sb] Matched: a=90, b=127, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 100900: uvm_test_top.env.sb [gcd_sb] Matched: a=57, b=39, gcd=3
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 105700: uvm_test_top.env.sb [gcd_sb] Matched: a=206, b=227, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 108900: uvm_test_top.env.sb [gcd_sb] Matched: a=23, b=43, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 112500: uvm_test_top.env.sb [gcd_sb] Matched: a=22, b=136, gcd=2
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 154100: uvm_test_top.env.sb [gcd_sb] Matched: a=202, b=203, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 159100: uvm_test_top.env.sb [gcd_sb] Matched: a=51, b=201, gcd=3
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 163700: uvm_test_top.env.sb [gcd_sb] Matched: a=82, b=218, gcd=2
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 169500: uvm_test_top.env.sb [gcd_sb] Matched: a=37, b=166, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 175900: uvm_test_top.env.sb [gcd_sb] Matched: a=174, b=89, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 182300: uvm_test_top.env.sb [gcd_sb] Matched: a=236, b=197, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 186100: uvm_test_top.env.sb [gcd_sb] Matched: a=223, b=70, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 190900: uvm_test_top.env.sb [gcd_sb] Matched: a=136, b=173, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 194700: uvm_test_top.env.sb [gcd_sb] Matched: a=229, b=162, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 200700: uvm_test_top.env.sb [gcd_sb] Matched: a=248, b=215, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 206500: uvm_test_top.env.sb [gcd_sb] Matched: a=192, b=154, gcd=2
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 210900: uvm_test_top.env.sb [gcd_sb] Matched: a=61, b=112, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 213900: uvm_test_top.env.sb [gcd_sb] Matched: a=112, b=46, gcd=2
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 217500: uvm_test_top.env.sb [gcd_sb] Matched: a=87, b=165, gcd=3
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 230700: uvm_test_top.env.sb [gcd_sb] Matched: a=244, b=4, gcd=4
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 237100: uvm_test_top.env.sb [gcd_sb] Matched: a=70, b=73, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 242700: uvm_test_top.env.sb [gcd_sb] Matched: a=77, b=73, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 246900: uvm_test_top.env.sb [gcd_sb] Matched: a=9, b=92, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 251100: uvm_test_top.env.sb [gcd_sb] Matched: a=123, b=42, gcd=3
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 256100: uvm_test_top.env.sb [gcd_sb] Matched: a=162, b=11, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 261100: uvm_test_top.env.sb [gcd_sb] Matched: a=126, b=167, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 266300: uvm_test_top.env.sb [gcd_sb] Matched: a=15, b=252, gcd=3
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 268500: uvm_test_top.env.sb [gcd_sb] Matched: a=85, b=102, gcd=17
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 274700: uvm_test_top.env.sb [gcd_sb] Matched: a=81, b=182, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 305300: uvm_test_top.env.sb [gcd_sb] Matched: a=1, b=148, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 308900: uvm_test_top.env.sb [gcd_sb] Matched: a=103, b=133, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 314500: uvm_test_top.env.sb [gcd_sb] Matched: a=130, b=93, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 318100: uvm_test_top.env.sb [gcd_sb] Matched: a=83, b=29, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 320900: uvm_test_top.env.sb [gcd_sb] Matched: a=216, b=150, gcd=6
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 324300: uvm_test_top.env.sb [gcd_sb] Matched: a=19, b=36, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 332900: uvm_test_top.env.sb [gcd_sb] Matched: a=3, b=107, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 336300: uvm_test_top.env.sb [gcd_sb] Matched: a=168, b=154, gcd=14
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 355100: uvm_test_top.env.sb [gcd_sb] Matched: a=2, b=175, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 359100: uvm_test_top.env.sb [gcd_sb] Matched: a=18, b=172, gcd=2
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 366500: uvm_test_top.env.sb [gcd_sb] Matched: a=214, b=53, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 369700: uvm_test_top.env.sb [gcd_sb] Matched: a=80, b=255, gcd=5
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 376700: uvm_test_top.env.sb [gcd_sb] Matched: a=127, b=132, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 383500: uvm_test_top.env.sb [gcd_sb] Matched: a=99, b=194, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 388700: uvm_test_top.env.sb [gcd_sb] Matched: a=253, b=20, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 397500: uvm_test_top.env.sb [gcd_sb] Matched: a=76, b=78, gcd=2
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 400900: uvm_test_top.env.sb [gcd_sb] Matched: a=79, b=65, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 405300: uvm_test_top.env.sb [gcd_sb] Matched: a=9, b=73, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 407900: uvm_test_top.env.sb [gcd_sb] Matched: a=119, b=221, gcd=17
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 410900: uvm_test_top.env.sb [gcd_sb] Matched: a=154, b=133, gcd=7
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 415300: uvm_test_top.env.sb [gcd_sb] Matched: a=115, b=21, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 435100: uvm_test_top.env.sb [gcd_sb] Matched: a=1, b=94, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 439300: uvm_test_top.env.sb [gcd_sb] Matched: a=68, b=142, gcd=2
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 442500: uvm_test_top.env.sb [gcd_sb] Matched: a=60, b=166, gcd=2
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 446900: uvm_test_top.env.sb [gcd_sb] Matched: a=234, b=164, gcd=2
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 449700: uvm_test_top.env.sb [gcd_sb] Matched: a=76, b=92, gcd=4
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 451500: uvm_test_top.env.sb [gcd_sb] Matched: a=100, b=40, gcd=20
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 454100: uvm_test_top.env.sb [gcd_sb] Matched: a=49, b=175, gcd=7
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 458100: uvm_test_top.env.sb [gcd_sb] Matched: a=179, b=28, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 475300: uvm_test_top.env.sb [gcd_sb] Matched: a=235, b=157, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 477300: uvm_test_top.env.sb [gcd_sb] Matched: a=215, b=172, gcd=43
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 480900: uvm_test_top.env.sb [gcd_sb] Matched: a=121, b=206, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 485100: uvm_test_top.env.sb [gcd_sb] Matched: a=208, b=170, gcd=2
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 497700: uvm_test_top.env.sb [gcd_sb] Matched: a=220, b=109, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 501300: uvm_test_top.env.sb [gcd_sb] Matched: a=158, b=69, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 505500: uvm_test_top.env.sb [gcd_sb] Matched: a=20, b=169, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 510300: uvm_test_top.env.sb [gcd_sb] Matched: a=64, b=33, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 515300: uvm_test_top.env.sb [gcd_sb] Matched: a=33, b=83, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 519500: uvm_test_top.env.sb [gcd_sb] Matched: a=183, b=109, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 531300: uvm_test_top.env.sb [gcd_sb] Matched: a=3, b=154, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 537900: uvm_test_top.env.sb [gcd_sb] Matched: a=3, b=84, gcd=3
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 541700: uvm_test_top.env.sb [gcd_sb] Matched: a=185, b=34, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 543900: uvm_test_top.env.sb [gcd_sb] Matched: a=36, b=216, gcd=36
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 550100: uvm_test_top.env.sb [gcd_sb] Matched: a=68, b=71, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 553900: uvm_test_top.env.sb [gcd_sb] Matched: a=26, b=202, gcd=2
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 561100: uvm_test_top.env.sb [gcd_sb] Matched: a=164, b=218, gcd=2
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 565300: uvm_test_top.env.sb [gcd_sb] Matched: a=228, b=254, gcd=2
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 566500: uvm_test_top.env.sb [gcd_sb] Matched: a=12, b=12, gcd=12
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 567700: uvm_test_top.env.sb [gcd_sb] Matched: a=33, b=33, gcd=33
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 568900: uvm_test_top.env.sb [gcd_sb] Matched: a=177, b=177, gcd=177
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 570100: uvm_test_top.env.sb [gcd_sb] Matched: a=210, b=210, gcd=210
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 571300: uvm_test_top.env.sb [gcd_sb] Matched: a=205, b=205, gcd=205
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 572500: uvm_test_top.env.sb [gcd_sb] Matched: a=45, b=45, gcd=45
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 573700: uvm_test_top.env.sb [gcd_sb] Matched: a=58, b=58, gcd=58
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 574900: uvm_test_top.env.sb [gcd_sb] Matched: a=222, b=222, gcd=222
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 576100: uvm_test_top.env.sb [gcd_sb] Matched: a=17, b=17, gcd=17
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 577300: uvm_test_top.env.sb [gcd_sb] Matched: a=198, b=198, gcd=198
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 579700: uvm_test_top.env.sb [gcd_sb] Matched: a=13, b=4, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 582100: uvm_test_top.env.sb [gcd_sb] Matched: a=14, b=5, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 583700: uvm_test_top.env.sb [gcd_sb] Matched: a=10, b=15, gcd=5
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 586700: uvm_test_top.env.sb [gcd_sb] Matched: a=18, b=20, gcd=2
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 589300: uvm_test_top.env.sb [gcd_sb] Matched: a=16, b=3, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 591700: uvm_test_top.env.sb [gcd_sb] Matched: a=3, b=13, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 594300: uvm_test_top.env.sb [gcd_sb] Matched: a=11, b=20, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 597100: uvm_test_top.env.sb [gcd_sb] Matched: a=8, b=15, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 598300: uvm_test_top.env.sb [gcd_sb] Matched: a=4, b=4, gcd=4
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 600700: uvm_test_top.env.sb [gcd_sb] Matched: a=3, b=13, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 601900: uvm_test_top.env.sb [gcd_sb] Matched: a=3, b=3, gcd=3
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 604500: uvm_test_top.env.sb [gcd_sb] Matched: a=17, b=13, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 607900: uvm_test_top.env.sb [gcd_sb] Matched: a=11, b=12, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 609100: uvm_test_top.env.sb [gcd_sb] Matched: a=9, b=9, gcd=9
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 611500: uvm_test_top.env.sb [gcd_sb] Matched: a=7, b=18, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 613900: uvm_test_top.env.sb [gcd_sb] Matched: a=14, b=2, gcd=2
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 616100: uvm_test_top.env.sb [gcd_sb] Matched: a=10, b=3, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 618500: uvm_test_top.env.sb [gcd_sb] Matched: a=7, b=18, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 620500: uvm_test_top.env.sb [gcd_sb] Matched: a=2, b=10, gcd=2
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 621700: uvm_test_top.env.sb [gcd_sb] Matched: a=5, b=5, gcd=5
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 627900: uvm_test_top.env.sb [gcd_sb] Matched: a=245, b=232, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 643700: uvm_test_top.env.sb [gcd_sb] Matched: a=219, b=222, gcd=3
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 647700: uvm_test_top.env.sb [gcd_sb] Matched: a=246, b=206, gcd=2
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 648900: uvm_test_top.env.sb [gcd_sb] Matched: a=210, b=210, gcd=210
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 652900: uvm_test_top.env.sb [gcd_sb] Matched: a=205, b=253, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 654100: uvm_test_top.env.sb [gcd_sb] Matched: a=245, b=245, gcd=245
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 656700: uvm_test_top.env.sb [gcd_sb] Matched: a=247, b=209, gcd=19
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 669700: uvm_test_top.env.sb [gcd_sb] Matched: a=221, b=225, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 680100: uvm_test_top.env.sb [gcd_sb] Matched: a=247, b=206, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 681300: uvm_test_top.env.sb [gcd_sb] Matched: a=207, b=207, gcd=207
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 702700: uvm_test_top.env.sb [gcd_sb] Matched: a=204, b=202, gcd=2
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 703900: uvm_test_top.env.sb [gcd_sb] Matched: a=236, b=236, gcd=236
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 705100: uvm_test_top.env.sb [gcd_sb] Matched: a=245, b=245, gcd=245
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 709500: uvm_test_top.env.sb [gcd_sb] Matched: a=217, b=247, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 713700: uvm_test_top.env.sb [gcd_sb] Matched: a=243, b=206, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 714900: uvm_test_top.env.sb [gcd_sb] Matched: a=204, b=204, gcd=204
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 730300: uvm_test_top.env.sb [gcd_sb] Matched: a=213, b=216, gcd=3
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 735500: uvm_test_top.env.sb [gcd_sb] Matched: a=255, b=227, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 740700: uvm_test_top.env.sb [gcd_sb] Matched: a=237, b=252, gcd=3
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 745100: uvm_test_top.env.sb [gcd_sb] Matched: a=209, b=233, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 758900: uvm_test_top.env.sb [gcd_sb] Matched: a=1, b=64, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 760300: uvm_test_top.env.sb [gcd_sb] Matched: a=8, b=4, gcd=4
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 762900: uvm_test_top.env.sb [gcd_sb] Matched: a=64, b=8, gcd=8
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 764700: uvm_test_top.env.sb [gcd_sb] Matched: a=1, b=4, gcd=1
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 766100: uvm_test_top.env.sb [gcd_sb] Matched: a=4, b=2, gcd=2
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 767900: uvm_test_top.env.sb [gcd_sb] Matched: a=64, b=16, gcd=16
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 775300: uvm_test_top.env.sb [gcd_sb] Matched: a=4, b=128, gcd=4
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 782700: uvm_test_top.env.sb [gcd_sb] Matched: a=4, b=128, gcd=4
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 785300: uvm_test_top.env.sb [gcd_sb] Matched: a=2, b=16, gcd=2
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+UVM_INFO src/uvm/env/gcd_sb.sv(55) @ 787100: uvm_test_top.env.sb [gcd_sb] Matched: a=8, b=32, gcd=8
+----------------------------------------------------------------------------------------------------------
+UVM_INFO /tools/software/cadence/xcelium/latest/tools/methodology/UVM/CDNS-1.1d/sv/src/base/uvm_objection.svh(1245) @ 807100: reporter [TEST_DONE] All end-of-test objections have been dropped. Calling stop tasks
+UVM_INFO /tools/software/cadence/xcelium/latest/tools/methodology/UVM/CDNS-1.1d/sv/src/base/uvm_objection.svh(1268) @ 807100: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO src/uvm/env/gcd_sb.sv(64) @ 807100: uvm_test_top.env.sb [gcd_sb] Report:
+
+   Scoreboard: Simulation Statistics 
+     Num In:   160     Num Correct: 160
+     Num Incorrect: 0
+
+UVM_INFO src/uvm/env/gcd_sb.sv(68) @ 807100: uvm_test_top.env.sb [gcd_sb] Status:
+
+Simulation PASSED
+
+
+--- UVM Report catcher Summary ---
+
+
+Number of demoted UVM_FATAL reports  :    0
+Number of demoted UVM_ERROR reports  :    0
+Number of demoted UVM_WARNING reports:    0
+Number of caught UVM_FATAL reports   :    0
+Number of caught UVM_ERROR reports   :    0
+Number of caught UVM_WARNING reports :    0
+
+--- UVM Report Summary ---
+
+Quit count :     0 of     1
+** Report counts by severity
+UVM_INFO :  182
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[MAXQUITSET]     1
+[PHASESEQ]    13
+[RNTST]     1
+[TEST_DONE]     2
+[UVMTOP]     1
+[all_gcd_test]     1
+[comprehensive_gcd_seq]     1
+[gcd_sb]   162
+Simulation complete via $finish(1) at time 80710 NS + 45
+/tools/software/cadence/xcelium/latest/tools/methodology/UVM/CDNS-1.1d/sv/src/base/uvm_root.svh:457     $finish;
+xcelium> exit
+
+coverage setup:
+  workdir  :  ./cov_work
+  dutinst  :  gcd_tb_top(gcd_tb_top)
+  scope    :  scope
+  testname :  test
+
+coverage files:
+  model(design data) :  ./cov_work/scope/icc_2c6f5b27_00000000.ucm
+  data               :  ./cov_work/scope/test/icc_2c6f5b27_00000000.ucd
+TOOL:	xrun(64)	25.03-s003: Exiting on Nov 09, 2025 at 06:14:42 EST  (total: 00:00:06)
