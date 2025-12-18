@@ -23,7 +23,7 @@ I architected the testbench using standard UVM components located in `src/uvm/`:
 A key part of this project was validating a "faulty" RTL design provided by the team.
 
 * **RTL Debugging:** Using waveform analysis in **SimVision**, I identified and fixed logic errors in the GCD state machine and protocol violations in the handshake signals.
-* **Code Coverage:** I utilized **Cadence IMC** to analyze code coverage. By writing specific constraints and directed tests to hit edge cases (such as zero-value inputs or immediate resets), I achieved a **>96% coverage score**, ensuring the design was thoroughly exercised.
+* **Code Coverage:** I utilized **Vivado** to analyze code coverage. By writing specific constraints and directed tests to hit edge cases (such as zero-value inputs or immediate resets), I achieved a **>96% coverage score**, ensuring the design was thoroughly exercised.
 
 ## **<u>Directory Structure</u>**
 
@@ -36,4 +36,4 @@ A key part of this project was validating a "faulty" RTL design provided by the 
 
 ## **<u>Tools Used</u>**
 
-SystemVerilog, UVM 1.1d, Cadence Xcelium (`xrun`), Cadence SimVision (Waveforms), Cadence IMC (Coverage).
+SystemVerilog, UVM 1.1d, Cadence Xcelium (`xrun`), Cadence SimVision (Waveforms), Vivado (coverage)
